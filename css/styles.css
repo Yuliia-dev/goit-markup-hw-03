@@ -139,8 +139,11 @@ img {
 /* Hero */
 .hero {
   background-color: var(--hero-color);
+  padding: 200px 450px 200px 450px;
 }
 .hero-text {
+  padding-bottom: 40px;
+
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -153,10 +156,12 @@ img {
   text-align: center;
 }
 .hero-button-text {
+  padding: 10px 30px 10px 30px;
+
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
-  align-items: center;
+  /* align-items: center; */
   letter-spacing: 0.06em;
   color: var(--title-color);
   background: var(--accent-color);
