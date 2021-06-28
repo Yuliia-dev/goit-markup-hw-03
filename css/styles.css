@@ -42,6 +42,7 @@ img {
 .list {
   list-style: none;
 }
+
 /* Container */
 .container {
   width: 1200px;
@@ -67,12 +68,11 @@ img {
   color: var(--secondary-color);
 }
 
-/* Heder */
+/* Header */
 .header {
-  padding-top: 32px;
-  padding-bottom: 32px;
+  background-color: var(--title-color);
 
-  border: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--line-color);
 }
 .main-nav,
 .nav {
@@ -82,6 +82,7 @@ img {
 
 .menu {
   display: flex;
+  align-items: center;
 }
 .menu-item:not(:last-child) {
   margin-right: 50px;
@@ -89,14 +90,20 @@ img {
 
 .hookup {
   display: flex;
+  align-items: center;
   margin-left: auto;
 }
-.hookup :not(:first-child) {
+.hookup-item:not(:first-child) {
   margin-left: 50px;
 }
 
 .menu-link,
 .hookup-link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  align-items: center;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
@@ -138,47 +145,61 @@ img {
 
 /* Hero */
 .hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
+  text-align: center;
+
   background-color: var(--hero-color);
-  padding: 200px 450px 200px 450px;
 }
+.hero .container {
+  width: 700px;
+}
+
 .hero-text {
-  padding-bottom: 40px;
+  margin-bottom: 30px;
 
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
-  text-align: center;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--title-color);
 }
-.hero-button {
-  text-align: center;
-}
 .hero-button-text {
-  padding: 10px 30px 10px 30px;
+  padding: 10px 30px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: center;
 
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
-  /* align-items: center; */
+  align-items: center;
   letter-spacing: 0.06em;
   color: var(--title-color);
   background: var(--accent-color);
-  cursor: pointer;
 }
 
 /* Specifics */
+.hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
 .specifics {
   padding-bottom: 0;
 }
 .preference-list {
-  margin-top: -10px;
   margin-left: -30px;
 }
 .preference-item {
-  margin-top: 10px;
   margin-left: 30px;
+  width: 270px;
+  /* flex-basis: calc(100% - 4 * 30px) / 4; */
 }
 .preference-list {
   display: flex;
@@ -200,12 +221,11 @@ img {
 /* Work */
 .work-item {
   display: flex;
-  margin-top: -30px;
   margin-left: -30px;
 }
 .work-img {
-  margin-top: 30px;
   margin-left: 30px;
+  width: 370px;
 }
 
 /* Team */
@@ -214,11 +234,9 @@ img {
 }
 .team-item {
   display: flex;
-  margin-top: -30px;
   margin-left: -30px;
 }
 .team-list {
-  margin-top: 30px;
   margin-left: 30px;
 
   background: var(--title-color);
@@ -226,9 +244,8 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-.photo,
-.team-position {
-  margin-bottom: 30px;
+.person {
+  padding: 30px 55px;
 }
 .team-name {
   margin-bottom: 10px;
@@ -253,15 +270,15 @@ img {
   padding-bottom: 60px;
   background: var(--hero-color);
 }
-.address {
+.connect {
   font-style: normal;
   font-weight: 400;
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--title-color);
 }
-.address:hover,
-.address:focus,
+.connect:hover,
+.connect:focus,
 .hookup-footer:hover,
 .hookup-footer:focus {
   color: var(--accent-color);
@@ -273,8 +290,9 @@ img {
   letter-spacing: 0.03em;
   color: var(--title-color);
 }
-.contacts {
+.address {
   margin-top: 20px;
+  font-style: inherit;
 }
 .contacts-item:not(:first-child) {
   margin-top: 10px;
@@ -303,6 +321,8 @@ img {
   padding: 6px 22px;
   background: var(--team-section-color);
   border-radius: 4px;
+  border: none;
+  font-family: inherit;
 
   font-weight: 500;
   font-size: 16px;
@@ -319,26 +339,31 @@ img {
 }
 
 /* Client */
-.container-customers {
-  width: 1200px;
-  margin: 0 auto;
-}
+
 .client {
+  margin-top: -30px;
+  margin-left: -30px;
   display: flex;
   flex-wrap: wrap;
 }
 .client-list {
-  margin-top: -28px;
-  margin-left: -28px;
+  display: flex;
+  margin-top: -30px;
+  margin-left: -30px;
 }
-.client-item {
-  margin-top: 28px;
-  margin-left: 28px;
+.client-name {
+  padding: 20px 24px;
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
 
-  border: 1px solid var(--border-color);
+.client-item {
+  margin-top: 30px;
+  margin-left: 30px;
 }
 .client-title {
-  padding: 20px 24px 0 24px;
+  margin-bottom: 4px;
 
   font-size: 18px;
   line-height: 2;
@@ -346,8 +371,6 @@ img {
   color: var(--secondary-color);
 }
 .client-text {
-  padding: 4px 24px 20px 24px;
-
   font-weight: 400;
   font-size: 16px;
   line-height: 1.87;
